@@ -1,0 +1,11 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 16
+VisualStudioVersion = 16.0.0.0
+MinimumVisualStudioVersion = 16.0.0.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tacit_Experimentation.Windows", "Tacit_Experimentation.Windows\Tacit_Experimentation.Windows.csproj", "{EF9DF652-E297-4113-9E4C-A33DAB9E2FD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tacit_Experimentation", "Tacit_Experimentation\Tacit_Experimentation.csproj", "{23988E41-4A62-4835-B4C9-8C7C9E86635A}"
+EndProject
+Global
+EndGlobal
