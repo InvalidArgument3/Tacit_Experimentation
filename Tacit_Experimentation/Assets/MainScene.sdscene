@@ -6,11 +6,12 @@ ChildrenIds: []
 Offset: {X: 0.0, Y: 0.0, Z: 0.0}
 Hierarchy:
     RootParts:
-        - ref!! 3d6b330e-5c54-4244-997e-0b2e7a8eae40
         - ref!! 26ad2a6c-0338-4dc1-a26c-a8e318abe494
         - ref!! f17902ee-8e8a-4253-b425-ec4c7b2ffa09
         - ref!! 54672b9d-eced-4c37-8af5-ca9fe5e54687
-        - ref!! 168d8bde-8ea4-4ac4-91cd-b4a1ade469ad
+        - ref!! 42a2a820-f94a-4d86-a583-934783416aad
+        - ref!! 3d6b330e-5c54-4244-997e-0b2e7a8eae40
+        - ref!! e703b72a-3fa8-4e68-a812-b40d1f348e2b
     Parts:
         -   Entity:
                 Id: 168d8bde-8ea4-4ac4-91cd-b4a1ade469ad
@@ -18,7 +19,7 @@ Hierarchy:
                 Components:
                     02e246e99242d2d8fc90d2911a5b7e60: !TransformComponent
                         Id: cc56c15f-e885-4f03-a706-b4632c770578
-                        Position: {X: 0.0, Y: 5.205062, Z: 0.0}
+                        Position: {X: 0.0, Y: 0.67881393, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children:
@@ -26,15 +27,16 @@ Hierarchy:
                     f8dfb8bd5759f0b34305415ae7dce11b: !ModelComponent
                         Id: ab4dadca-8fb9-4b09-a02e-5406452b9a42
                         Model: a0e0c032-4635-45cc-9d48-35525b89f1bb:Models/Box3x1x1
-                        Materials: {}
+                        Materials:
+                            79c9efb08179fe6fa38cdeb56f1e963d~0: 12a5c5a3-ac04-48dc-9b6a-b15a44b0ef7f:Materials/GridMT
                     bff8730cc8c9678b38dc251dca5bf39a: !RigidbodyComponent
                         Id: 5ff02e8e-b3e3-4cf6-a73c-4a9791a5741a
                         CanSleep: false
-                        Restitution: 0.0
-                        Friction: 0.5
+                        Restitution: 0.5
+                        Friction: 0.0
                         RollingFriction: 0.0
-                        CcdMotionThreshold: 0.0
-                        CcdSweptSphereRadius: 0.0
+                        CcdMotionThreshold: 0.001
+                        CcdSweptSphereRadius: 0.001
                         IsTrigger: false
                         IsKinematic: false
                         Mass: 1.0
@@ -49,10 +51,6 @@ Hierarchy:
                                 Size: {X: 3.0, Y: 1.0, Z: 1.0}
                                 LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                    681f8a5c9cc32b5e68770854d1cc3c21: !.LunarLanderController,Tacit_Experimentation
-                        Id: 50df7e3e-0d67-4d4a-aedc-1b751970665b
-                        ThrustForce: 10.0
-                        TorqueForce: 1.0
                     60b42577c923fafb9385fec84597d998: !ParticleSystemComponent
                         Id: 9da6e5a3-b74d-462d-8c1e-023c580ebc4e
                         Control:
@@ -64,6 +62,26 @@ Hierarchy:
                             Settings: {}
                             BoundingShape: null
                             Emitters: {}
+                    cbe4fe3cb60e61cb4f5342709b107b14: !.LunarLanderController,Tacit_Experimentation
+                        Id: 19cd438e-0e95-4003-b570-3bacd821c0f1
+                        ThrustForce: 10.0
+                        TorqueForce: 1.0
+                        StabilizationTorqueFactor: 2.0
+                        AngularDampingFactor: 0.5
+                        StabilizationDeadzone: 0.01
+                        MaxStabilizationTorque: 5.0
+                        StabilizationDelay: 0.005
+                        ThrottleSmoothingFactor: 3.0
+                        ThrottleGravityCompensationFactor: 0.02
+                        ThrottleIncrementRate: 0.15
+                        MaxThrust: 20.0
+                        VerticalDampingFactor: 0.1
+                        MaxPitchAngle: 15.0
+                        PitchRecoveryFactor: 10.0
+                        PitchStabilizationSpeed: 3.0
+                        GroundCushionHeight: 10.0
+                        CushionStrengthFactor: 10.0
+                        DownwardVelocityThreshold: -5.0
         -   Entity:
                 Id: 26ad2a6c-0338-4dc1-a26c-a8e318abe494
                 Name: Directional light
@@ -95,7 +113,7 @@ Hierarchy:
                 Components:
                     c7ce961c8b3457d615becc04b1e53719: !TransformComponent
                         Id: 07671ffb-5d76-4051-a860-33ddde3ecc05
-                        Position: {X: 0.0, Y: 4.491765, Z: 17.364563}
+                        Position: {X: 0.0, Y: 1.109406, Z: 8.1162}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
@@ -104,6 +122,12 @@ Hierarchy:
                         Name: null
                         Projection: Perspective
                         Slot: 01e2a33c-8f00-4826-93da-cd9bbc69f68d
+                    d435ac9fe40a828dc056baafb0744653: !Tacit_Experimentation.SideScrollingCamera,Tacit_Experimentation
+                        Id: eee987e3-08f5-4fe8-abab-02f2e8e2a587
+                        MouseWheelZoomSpeedFactor: 2.0
+                        Target: ref!! 168d8bde-8ea4-4ac4-91cd-b4a1ade469ad
+                        DistanceFromTarget: 10.0
+                        OffsetFromTarget: {X: 0.0, Y: 0.0, Z: 0.0}
         -   Entity:
                 Id: 429d3015-17b2-47b1-a9cf-4e4693979663
                 Name: Simple particle system
@@ -216,6 +240,35 @@ Hierarchy:
                                             ForceVortex: 0.0
                                             ForceRepulsive: 0.0
                                             ForceFixed: {X: 0.0, Y: -9.81, Z: 0.0}
+        -   Folder: null
+            Entity:
+                Id: 42a2a820-f94a-4d86-a583-934783416aad
+                Name: Ground
+                Components:
+                    74ea70030cf48ea47aca50033c191c13: !TransformComponent
+                        Id: ca3db73b-7892-4f39-b8d4-2cb5ee969fd2
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 371.81555, Y: 1.0, Z: 2.1021326}
+                        Children: {}
+                    cd2ab47c4d84c6d32243248ab72b52eb: !ModelComponent
+                        Id: 4fe522ee-9498-492f-9dcb-355280ed5c40
+                        Model: 57a42175-6d52-45f9-9825-21d300a5b267:Ground
+                        Materials: {}
+                    b9b990142d089333e8fd383a3f43441c: !StaticColliderComponent
+                        Id: 78e24810-9e41-4d1a-a86f-2dd6ac4f0d16
+                        CanSleep: false
+                        Restitution: 0.5
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        IsTrigger: false
+                        AlwaysUpdateNaviMeshCache: false
+                        ColliderShapes:
+                            2d377151efb7ee088fede3cbbacd3159: !StaticPlaneColliderShapeDesc
+                                Normal: {X: 0.0, Y: 1.0, Z: 0.0}
+                                Offset: 0.0
         -   Entity:
                 Id: 54672b9d-eced-4c37-8af5-ca9fe5e54687
                 Name: Ground
@@ -244,6 +297,17 @@ Hierarchy:
                             2d377151efb7ee088fede3cbbacd3159: !StaticPlaneColliderShapeDesc
                                 Normal: {X: 0.0, Y: 1.0, Z: 0.0}
                                 Offset: 0.0
+        -   Entity:
+                Id: e703b72a-3fa8-4e68-a812-b40d1f348e2b
+                Name: Player
+                Components:
+                    21d2e421ff9eed80a7519c88a371651a: !TransformComponent
+                        Id: 7ac2634e-017f-4955-8b76-d6d37055a8f3
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children:
+                            9b354d03492b908943d5d4d1126888ec: ref!! cc56c15f-e885-4f03-a706-b4632c770578
         -   Entity:
                 Id: f17902ee-8e8a-4253-b425-ec4c7b2ffa09
                 Name: Skybox
