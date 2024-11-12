@@ -203,12 +203,14 @@ public class LunarLanderController : SyncScript
 
         if (result.Succeeded)
         {
+            // Calculate and set distance to ground
             distanceToGround = (raycastStart - result.Point).Length();
             isNearGround = distanceToGround <= GroundCushionHeight;
         }
         else
         {
-            distanceToGround = float.MaxValue;
+            // If ground is not detected, set distanceToGround to a high but reasonable default, or mark as out of range
+            distanceToGround = 9999f; // or a maximum value you'd like to represent "out of range"
             isNearGround = false;
         }
     }

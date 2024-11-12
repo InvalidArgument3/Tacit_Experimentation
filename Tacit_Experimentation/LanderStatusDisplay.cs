@@ -42,19 +42,27 @@ public class LanderStatusDisplay : SyncScript
 
     public override void Update()
     {
-        // Ensure both the LunarLanderController and TextBlockOutput are valid
         if (landerController == null || textBlockOutput == null) return;
 
-        // Construct the status text
         var statusText = new StringBuilder();
         statusText.AppendLine($"Throttle: {landerController.currentThrottle:F2}");
         statusText.AppendLine($"Effective Thrust: {landerController.effectiveThrust:F2}");
-        statusText.AppendLine($"Distance to Ground: {landerController.distanceToGround:F2}");
+
+        // Check if distanceToGround is out of range and adjust display accordingly
+        if (landerController.distanceToGround >= 9999f)
+        {
+            statusText.AppendLine("Distance to Ground: Out of Range");
+        }
+        else
+        {
+            statusText.AppendLine($"Distance to Ground: {landerController.distanceToGround:F2}");
+        }
+
         statusText.AppendLine($"Is Near Ground: {landerController.isNearGround}");
         statusText.AppendLine($"Target Throttle: {landerController.targetThrottle:F2}");
         statusText.AppendLine($"Vertical Damping Factor: {landerController.VerticalDampingFactor:F2}");
 
-        // Set the constructed text to the TextBlockOutput
         textBlockOutput.Text = statusText.ToString();
     }
+
 }
