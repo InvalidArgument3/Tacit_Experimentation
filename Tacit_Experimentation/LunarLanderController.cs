@@ -44,11 +44,11 @@ public class LunarLanderController : SyncScript {
     private RigidbodyComponent rigidbody;
     private float lastUserInputTime;
     private bool isUserRotating;
-    private float currentThrottle;// Current throttle value (0 to 1)
-    private float targetThrottle;// Target throttle value
-    private float effectiveThrust;// Calculated thrust after smoothing
-    private float distanceToGround;
-    private bool isNearGround;
+    public float currentThrottle;       // Current throttle value (0 to 1)
+    public float targetThrottle;        // Target throttle value
+    public float effectiveThrust;       // Calculated thrust after smoothing
+    public float distanceToGround;
+    public bool isNearGround;
 
     // Auto-pilot state
     private bool isAutoPilotActive = false;
@@ -289,12 +289,14 @@ public class LunarLanderController : SyncScript {
 
         if (result.Succeeded)
         {
+            // Calculate and set distance to ground
             distanceToGround = (raycastStart - result.Point).Length();
             isNearGround = distanceToGround <= GroundCushionHeight;
         }
         else
         {
-            distanceToGround = float.MaxValue;
+            // If ground is not detected, set distanceToGround to a high but reasonable default, or mark as out of range
+            distanceToGround = 9999f; // or a maximum value you'd like to represent "out of range"
             isNearGround = false;
         }
     }

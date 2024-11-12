@@ -12,6 +12,7 @@ Hierarchy:
         - ref!! 42a2a820-f94a-4d86-a583-934783416aad
         - ref!! 3d6b330e-5c54-4244-997e-0b2e7a8eae40
         - ref!! e703b72a-3fa8-4e68-a812-b40d1f348e2b
+        - ref!! f769d0ba-4838-47f2-b556-a7db5fdc5103
     Parts:
         -   Entity:
                 Id: 168d8bde-8ea4-4ac4-91cd-b4a1ade469ad
@@ -86,6 +87,13 @@ Hierarchy:
                         AutoPilotForce: 5.0
                         AutoPilotDampingFactor: 0.8
                         AutoPilotRotationSpeed: 2.0
+                        currentThrottle: 0.0
+                        targetThrottle: 0.0
+                        effectiveThrust: 0.0
+                        distanceToGround: 0.0
+                        isNearGround: false
+                    3df46dff0bf943c1292556f12539f846: !.LanderStatusDisplay,Tacit_Experimentation
+                        Id: ce54847c-38cb-4f27-8a56-c4bf307a21a9
         -   Entity:
                 Id: 26ad2a6c-0338-4dc1-a26c-a8e318abe494
                 Name: Directional light
@@ -329,3 +337,18 @@ Hierarchy:
                         Id: 26dc7aae-88a9-4f41-a30f-7236f38a1f61
                         Type: !LightSkybox
                             Skybox: 3c419ca6-ef0e-45f9-9012-f1c09f02ec8c:Skybox
+        -   Entity:
+                Id: f769d0ba-4838-47f2-b556-a7db5fdc5103
+                Name: InfoPanelEntity
+                Components:
+                    c137bf77af648b25598db43fe104057b: !TransformComponent
+                        Id: 75940e0f-bc6e-4628-83fb-12a665cce571
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    d62e41df7dce9160191a7937c8371534: !UIComponent
+                        Id: d7db750d-c6fd-45ee-ae6d-441c12a197cb
+                        Page: 6a6d0936-e8c7-4a6a-8b57-857869e4f579:InfoPanel
+                        Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+                        Size: {X: 1.28, Y: 0.72, Z: 1.0}
