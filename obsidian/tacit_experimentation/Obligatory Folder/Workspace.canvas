@@ -1,0 +1,14 @@
+{
+	"nodes":[
+		{"id":"99b283aa312acaec","type":"file","file":"Obligatory Folder/Basic parameters.md","x":-760,"y":-720,"width":1120,"height":1180},
+		{"id":"f716bc6eef3adc26","x":-1180,"y":-240,"width":315,"height":400,"type":"file","file":"d6bbjojh.bmp"},
+		{"id":"7f54774579b52a98","x":-2220,"y":-180,"width":740,"height":723,"type":"file","file":"Pasted image 20241111174832.png"},
+		{"id":"7acd78b0466884ef","x":-2232,"y":940,"width":764,"height":740,"type":"file","file":"Pasted image 20241111175228.png"},
+		{"id":"c8e0017e10700a6e","x":-1265,"y":317,"width":400,"height":286,"type":"file","file":"Pasted image 20241111175040.png"},
+		{"id":"782a47deed7203f5","x":-1265,"y":760,"width":400,"height":286,"type":"file","file":"Pasted image 20241111175645.png"}
+	],
+	"edges":[
+		{"id":"0dc418cc3a129c7c","fromNode":"7f54774579b52a98","fromSide":"bottom","toNode":"7acd78b0466884ef","toSide":"top","label":"Controls should be simple"},
+		{"id":"0543af7ffabf7f6f","fromNode":"c8e0017e10700a6e","fromSide":"bottom","toNode":"782a47deed7203f5","toSide":"top","label":"landing gear deploys near base automatically and retracts automatically"}
+	]
+}

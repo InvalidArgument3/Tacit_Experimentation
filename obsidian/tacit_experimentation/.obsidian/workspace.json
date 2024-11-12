@@ -6,37 +6,22 @@
       {
         "id": "d993f47db9b707b6",
         "type": "tabs",
-        "dimension": 64.14999999999999,
         "children": [
           {
             "id": "2eff7ee7cc95f6b2",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Basic parameters.md",
-                "mode": "source",
-                "source": false
+                "file": "Obligatory Folder/Workspace.canvas",
+                "viewState": {
+                  "x": -616.279978719889,
+                  "y": 695.1299901242006,
+                  "zoom": 0.22222223917643225
+                }
               },
-              "icon": "lucide-file",
-              "title": "Basic parameters"
-            }
-          }
-        ]
-      },
-      {
-        "id": "2dda974323be7a4a",
-        "type": "tabs",
-        "dimension": 35.85,
-        "children": [
-          {
-            "id": "324f4a0348d28225",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "icon": "lucide-layout-dashboard",
+              "title": "Workspace"
             }
           }
         ]
@@ -95,7 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "02af1f5611bff73e",
@@ -111,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Basic parameters.md",
+                "file": "Obligatory Folder/Workspace.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +106,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Basic parameters"
+              "title": "Backlinks for Workspace"
             }
           },
           {
@@ -130,12 +115,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Basic parameters.md",
+                "file": "Obligatory Folder/Workspace.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Basic parameters"
+              "title": "Outgoing links from Workspace"
             }
           },
           {
@@ -157,10 +142,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Basic parameters.md"
+                "file": "Obligatory Folder/Workspace.canvas"
               },
               "icon": "lucide-list",
-              "title": "Outline of Basic parameters"
+              "title": "Outline of Workspace"
             }
           }
         ]
@@ -182,7 +167,15 @@
   },
   "active": "2eff7ee7cc95f6b2",
   "lastOpenFiles": [
-    "Welcome.md",
-    "Basic parameters.md"
+    "Pasted image 20241111175645.png",
+    "Pasted image 20241111175228.png",
+    "Pasted image 20241111175040.png",
+    "Pasted image 20241111175039.png",
+    "Pasted image 20241111174832.png",
+    "d6bbjojh.bmp",
+    "Obligatory Folder/Basic parameters.md",
+    "Obligatory Folder/Workspace.canvas",
+    "Obligatory Folder",
+    "Welcome.md"
   ]
 }
