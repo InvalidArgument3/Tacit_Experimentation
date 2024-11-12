@@ -25,7 +25,12 @@ As basic as is physically possible a feature complete "Game"
 			- Player drone should have two rotors, right and left
 		- ==Upgrades?== 
 			- ==Heavier grenades make flying harder==
-			- ==Mk1 versions of new grenades are janky and difficult to utilize (tied to drone via rope vs nice latching mechanism)==
+			- ==Mk1 versions of new grenades are janky and difficult to utilize and have poor aerodynamics==
+			- ==Mk2+ versions get aero packages that make them more reliable to drop==
+		- ==Grenades influenced by simulated aerodynamics==
+		- ==Simulated wind buffets player character drone and grenades dropped by drone==
+		- ==Background scenery should somehow indicate the direction of the wind at any given altitude== 
+			- ==flagpoles, rising smoke, vegetation, particles magically falling from space, anything== 
 	- Enemies near ground attempt to throw spears at character
 		- Enemies attempt to lead the target and can miss
 	- Player must kill all enemies with grenades

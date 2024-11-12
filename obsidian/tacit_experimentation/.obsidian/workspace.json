@@ -15,9 +15,9 @@
               "state": {
                 "file": "Obligatory Folder/Workspace.canvas",
                 "viewState": {
-                  "x": -616.279978719889,
-                  "y": 695.1299901242006,
-                  "zoom": 0.22222223917643225
+                  "x": -466.7018100241082,
+                  "y": 24.961636309493713,
+                  "zoom": -0.11111119588216156
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -96,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Obligatory Folder/Workspace.canvas",
+                "file": "Obligatory Folder/Basic parameters.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,7 +106,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Workspace"
+              "title": "Backlinks for Basic parameters"
             }
           },
           {
@@ -115,12 +115,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Obligatory Folder/Workspace.canvas",
+                "file": "Obligatory Folder/Basic parameters.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Workspace"
+              "title": "Outgoing links from Basic parameters"
             }
           },
           {
@@ -142,10 +142,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obligatory Folder/Workspace.canvas"
+                "file": "Obligatory Folder/Basic parameters.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Workspace"
+              "title": "Outline of Basic parameters"
             }
           }
         ]
@@ -167,6 +167,7 @@
   },
   "active": "2eff7ee7cc95f6b2",
   "lastOpenFiles": [
+    "Pasted image 20241111180044.png",
     "Pasted image 20241111175645.png",
     "Pasted image 20241111175228.png",
     "Pasted image 20241111175040.png",
