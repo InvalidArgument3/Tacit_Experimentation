@@ -1,0 +1,33 @@
+!UIPageAsset
+Id: 6a6d0936-e8c7-4a6a-8b57-857869e4f579
+SerializedVersion: {Stride: 2.1.0.1}
+Tags: []
+Design:
+    Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+Hierarchy:
+    RootParts:
+        - !Grid ref!! 5227fff0-e4e6-4aad-a7a9-d6d242d3726c
+    Parts:
+        -   UIElement: !TextBlock
+                Id: 047096b9-e452-4ac2-908d-eda2c44bc62c
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                MaximumWidth: 3.4028235E+38
+                MaximumHeight: 3.4028235E+38
+                MaximumDepth: 3.4028235E+38
+                Name: TextBlockOutput
+                Text: TEST
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 20.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+        -   UIElement: !Grid
+                Id: 5227fff0-e4e6-4aad-a7a9-d6d242d3726c
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                Children:
+                    8ef4b3fc43b0435b69137a79bcd037aa: !TextBlock ref!! 047096b9-e452-4ac2-908d-eda2c44bc62c
+                RowDefinitions: {}
+                ColumnDefinitions: {}
+                LayerDefinitions: {}

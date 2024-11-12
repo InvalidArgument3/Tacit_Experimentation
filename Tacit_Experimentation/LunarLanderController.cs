@@ -38,11 +38,11 @@ public class LunarLanderController : SyncScript
     private RigidbodyComponent rigidbody;
     private float lastUserInputTime;
     private bool isUserRotating;
-    private float currentThrottle;       // Current throttle value (0 to 1)
-    private float targetThrottle;        // Target throttle value
-    private float effectiveThrust;       // Calculated thrust after smoothing
-    private float distanceToGround;
-    private bool isNearGround;
+    public float currentThrottle;       // Current throttle value (0 to 1)
+    public float targetThrottle;        // Target throttle value
+    public float effectiveThrust;       // Calculated thrust after smoothing
+    public float distanceToGround;
+    public bool isNearGround;
 
     public override void Start()
     {
