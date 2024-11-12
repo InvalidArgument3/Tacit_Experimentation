@@ -1,0 +1,5 @@
+- Follows Player's drone around, looking "From the side"
+- Should ease into moving, keeping the player character within roughly 2 radii from the center of the drone
+- should not track right and left, should depict the entire lateral playspace within a 16:9 screen footprint 
+- vertical playspace should extend no further than 4x above where the enemies can be seen at the bottom of the screen
+- should zoom out/in with the scroll wheel

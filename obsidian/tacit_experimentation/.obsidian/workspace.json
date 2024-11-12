@@ -15,9 +15,9 @@
               "state": {
                 "file": "Obligatory Folder/Workspace.canvas",
                 "viewState": {
-                  "x": -466.7018100241082,
-                  "y": 24.961636309493713,
-                  "zoom": -0.11111119588216156
+                  "x": 1031.015384453904,
+                  "y": -289.7554071441257,
+                  "zoom": 0.22222223917643225
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -96,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Obligatory Folder/Basic parameters.md",
+                "file": "Obligatory Folder/Workspace.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,7 +106,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Basic parameters"
+              "title": "Backlinks for Workspace"
             }
           },
           {
@@ -115,12 +115,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Obligatory Folder/Basic parameters.md",
+                "file": "Obligatory Folder/Workspace.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Basic parameters"
+              "title": "Outgoing links from Workspace"
             }
           },
           {
@@ -142,10 +142,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obligatory Folder/Basic parameters.md"
+                "file": "Obligatory Folder/Workspace.canvas"
               },
               "icon": "lucide-list",
-              "title": "Outline of Basic parameters"
+              "title": "Outline of Workspace"
             }
           }
         ]
@@ -167,6 +167,9 @@
   },
   "active": "2eff7ee7cc95f6b2",
   "lastOpenFiles": [
+    "Obligatory Folder/Camera controller script.md",
+    "Obligatory Folder/Workspace.canvas",
+    "Obligatory Folder/Drone control script.md",
     "Pasted image 20241111180044.png",
     "Pasted image 20241111175645.png",
     "Pasted image 20241111175228.png",
@@ -175,7 +178,6 @@
     "Pasted image 20241111174832.png",
     "d6bbjojh.bmp",
     "Obligatory Folder/Basic parameters.md",
-    "Obligatory Folder/Workspace.canvas",
     "Obligatory Folder",
     "Welcome.md"
   ]
