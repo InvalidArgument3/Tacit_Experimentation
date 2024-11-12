@@ -4,8 +4,8 @@ using Stride.Physics;
 using Stride.Input;
 using System;
 
-public class LunarLanderController : SyncScript
-{
+
+public class LunarLanderController : SyncScript {
     // Original control variables
     public float ThrustForce = 10f;
     public float TorqueForce = 1f;
@@ -18,31 +18,44 @@ public class LunarLanderController : SyncScript
     public float StabilizationDelay = 0.5f;
 
     // Throttle control parameters
-    public float ThrottleSmoothingFactor = 3.0f;          // Controls how quickly throttle changes
-    public float ThrottleGravityCompensationFactor = 0.4f; // Throttle needed to counter gravity
-    public float ThrottleIncrementRate = 0.5f;            // Rate of throttle change per second
-    public float MaxThrust = 20f;                         // Maximum possible thrust force
-    public float VerticalDampingFactor = 0.1f;            // Dampens vertical velocity
+    public float ThrottleSmoothingFactor = 3.0f;// Controls how quickly throttle changes
+    public float ThrottleGravityCompensationFactor = 0.4f;// Throttle needed to counter gravity
+    public float ThrottleIncrementRate = 0.5f;// Rate of throttle change per second
+    public float MaxThrust = 20f;// Maximum possible thrust force
+    public float VerticalDampingFactor = 0.1f;// Dampens vertical velocity
 
     // Auto-pitch control parameters
-    public float MaxPitchAngle = 45f;              // Maximum allowed pitch angle in degrees
-    public float PitchRecoveryFactor = 2.0f;       // How strongly to correct excessive pitch
-    public float PitchStabilizationSpeed = 3.0f;   // How quickly to return to level
+    public float MaxPitchAngle = 45f;// Maximum allowed pitch angle in degrees
+    public float PitchRecoveryFactor = 2.0f;// How strongly to correct excessive pitch
+    public float PitchStabilizationSpeed = 3.0f;// How quickly to return to level
 
     // Ground cushioning parameters
-    public float GroundCushionHeight = 5.0f;       // Height at which cushioning begins
-    public float CushionStrengthFactor = 2.0f;     // Multiplier for cushioning force
-    public float DownwardVelocityThreshold = -5f;  // Velocity at which cushioning activates
+    public float GroundCushionHeight = 5.0f;// Height at which cushioning begins
+    public float CushionStrengthFactor = 2.0f;// Multiplier for cushioning force
+    public float DownwardVelocityThreshold = -5f;// Velocity at which cushioning activates
+
+    // Auto-pilot parameters
+    public float AutoPilotXRange = 20f;// Range on either side of initial X position
+    public float AutoPilotForce = 5f;// Force applied during auto-pilot
+    public float AutoPilotDampingFactor = 0.8f;// Dampening for smooth movement
+    public float AutoPilotRotationSpeed = 2f;// Speed of rotation correction
 
     // Runtime variables
     private RigidbodyComponent rigidbody;
     private float lastUserInputTime;
     private bool isUserRotating;
-    private float currentThrottle;       // Current throttle value (0 to 1)
-    private float targetThrottle;        // Target throttle value
-    private float effectiveThrust;       // Calculated thrust after smoothing
+    private float currentThrottle;// Current throttle value (0 to 1)
+    private float targetThrottle;// Target throttle value
+    private float effectiveThrust;// Calculated thrust after smoothing
     private float distanceToGround;
     private bool isNearGround;
+
+    // Auto-pilot state
+    private bool isAutoPilotActive = false;
+    private float initialXPosition;
+    private float minXBound;
+    private float maxXBound;
+    private bool wasAutoPilotActiveLastFrame = false;
 
     public override void Start()
     {
@@ -61,31 +74,94 @@ public class LunarLanderController : SyncScript
         currentThrottle = ThrottleGravityCompensationFactor;
         targetThrottle = currentThrottle;
         effectiveThrust = 0f;
+
+        // Initialize auto-pilot bounds
+        initialXPosition = Entity.Transform.Position.X;
+        minXBound = initialXPosition - AutoPilotXRange;
+        maxXBound = initialXPosition + AutoPilotXRange;
     }
 
     public override void Update()
     {
         if (rigidbody == null) return;
 
-        UpdateGroundDistance();
-        HandlePositionConstraints();
-        UpdateThrottle();
-        HandleRotationInput();
-        ApplyPitchControl();
-        ApplyStabilization();
-        ApplyThrust();
-        ApplyGroundCushioning();
+        CheckAutoPilotActivation();
+
+        if (isAutoPilotActive)
+        {
+            ExecuteAutoPilot();
+        }
+        else
+        {
+            // Original control logic
+            UpdateGroundDistance();
+            HandlePositionConstraints();
+            UpdateThrottle();
+            HandleRotationInput();
+            ApplyPitchControl();
+            ApplyStabilization();
+            ApplyThrust();
+            ApplyGroundCushioning();
+        }
+
+        wasAutoPilotActiveLastFrame = isAutoPilotActive;
     }
 
-    private void HandlePositionConstraints()
+    private void CheckAutoPilotActivation()
     {
-        Entity.Transform.Position.Z = 0;
-        rigidbody.LinearVelocity = new Vector3(rigidbody.LinearVelocity.X, rigidbody.LinearVelocity.Y, 0);
-        rigidbody.AngularVelocity = new Vector3(0, 0, rigidbody.AngularVelocity.Z);
+        float currentX = Entity.Transform.Position.X;
+        isAutoPilotActive = currentX < minXBound || currentX > maxXBound;
+
+        // Log state change for debugging
+        if (isAutoPilotActive != wasAutoPilotActiveLastFrame)
+        {
+           // Log.Info(isAutoPilotActive ? "Auto-pilot engaged!" : "Auto-pilot disengaged - returning to manual control.");
+        }
     }
 
+    private void ExecuteAutoPilot()
+    {
+        float currentX = Entity.Transform.Position.X;
+        float targetX = initialXPosition;
+
+        // Calculate desired movement to center
+        float distanceToTarget = targetX - currentX;
+        Vector3 currentVelocity = rigidbody.LinearVelocity;
+
+        // Calculate force needed to return to center
+        float horizontalForce = distanceToTarget * AutoPilotForce;
+
+        // Apply damping to prevent oscillation
+        horizontalForce -= currentVelocity.X * AutoPilotDampingFactor;
+
+        // Level the rotation for stable flight
+        float currentRotation = GetCurrentZRotation();
+        float rotationCorrection = -currentRotation * AutoPilotRotationSpeed;
+        rigidbody.ApplyTorque(Vector3.UnitZ * rotationCorrection);
+
+        // Apply horizontal force to move towards center
+        rigidbody.ApplyForce(new Vector3(horizontalForce, 0, 0));
+
+        // Maintain vertical stability
+        float gravityCompensation = ThrottleGravityCompensationFactor * MaxThrust;
+        Vector3 verticalForce = Vector3.UnitY * gravityCompensation;
+
+        // Apply vertical damping to keep descent smooth
+        float verticalDamping = -currentVelocity.Y * VerticalDampingFactor;
+        verticalForce += Vector3.UnitY * verticalDamping;
+
+        rigidbody.ApplyForce(verticalForce);
+
+        // Override user input to maintain stability
+        currentThrottle = ThrottleGravityCompensationFactor;
+        targetThrottle = currentThrottle;
+    }
+
+    // Modify UpdateThrottle to disable user control during auto-pilot
     private void UpdateThrottle()
     {
+        if (isAutoPilotActive) return;
+
         float deltaTime = (float)Game.UpdateTime.Elapsed.TotalSeconds;
 
         // Update target throttle based on input
@@ -110,8 +186,11 @@ public class LunarLanderController : SyncScript
         effectiveThrust = MaxThrust * (currentThrottle + gravityCompensation);
     }
 
+    // Modify HandleRotationInput to disable user control during auto-pilot
     private void HandleRotationInput()
     {
+        if (isAutoPilotActive) return;
+
         isUserRotating = false;
 
         if (Input.IsKeyDown(Keys.Left) || Input.IsKeyDown(Keys.A))
@@ -130,6 +209,13 @@ public class LunarLanderController : SyncScript
     {
         lastUserInputTime = (float)Game.UpdateTime.Total.TotalSeconds;
         isUserRotating = true;
+    }
+
+    private void HandlePositionConstraints()
+    {
+        Entity.Transform.Position.Z = 0;
+        rigidbody.LinearVelocity = new Vector3(rigidbody.LinearVelocity.X, rigidbody.LinearVelocity.Y, 0);
+        rigidbody.AngularVelocity = new Vector3(0, 0, rigidbody.AngularVelocity.Z);
     }
 
     private void ApplyPitchControl()
@@ -212,7 +298,6 @@ public class LunarLanderController : SyncScript
             isNearGround = false;
         }
     }
-
     private float GetCurrentPitchAngle()
     {
         // Convert quaternion rotation to pitch angle in degrees
