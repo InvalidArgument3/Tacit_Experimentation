@@ -10,8 +10,48 @@ Hierarchy:
         - ref!! 26ad2a6c-0338-4dc1-a26c-a8e318abe494
         - ref!! f17902ee-8e8a-4253-b425-ec4c7b2ffa09
         - ref!! 54672b9d-eced-4c37-8af5-ca9fe5e54687
-        - ref!! 3c639cfa-eedc-41f8-b299-04a98d14e26b
+        - ref!! 168d8bde-8ea4-4ac4-91cd-b4a1ade469ad
     Parts:
+        -   Entity:
+                Id: 168d8bde-8ea4-4ac4-91cd-b4a1ade469ad
+                Name: Box3x1x1
+                Components:
+                    02e246e99242d2d8fc90d2911a5b7e60: !TransformComponent
+                        Id: cc56c15f-e885-4f03-a706-b4632c770578
+                        Position: {X: 0.0, Y: 5.205062, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    f8dfb8bd5759f0b34305415ae7dce11b: !ModelComponent
+                        Id: ab4dadca-8fb9-4b09-a02e-5406452b9a42
+                        Model: a0e0c032-4635-45cc-9d48-35525b89f1bb:Models/Box3x1x1
+                        Materials: {}
+                    bff8730cc8c9678b38dc251dca5bf39a: !RigidbodyComponent
+                        Id: 5ff02e8e-b3e3-4cf6-a73c-4a9791a5741a
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        IsTrigger: false
+                        IsKinematic: false
+                        Mass: 1.0
+                        LinearDamping: 0.0
+                        AngularDamping: 0.0
+                        OverrideGravity: false
+                        Gravity: {X: 0.0, Y: 0.0, Z: 0.0}
+                        NodeName: null
+                        ColliderShapes:
+                            94a575dfe6fce6dfda3f46a571915980: !BoxColliderShapeDesc
+                                Is2D: false
+                                Size: {X: 3.0, Y: 1.0, Z: 1.0}
+                                LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
+                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                    681f8a5c9cc32b5e68770854d1cc3c21: !.LunarLanderController,Tacit_Experimentation
+                        Id: 50df7e3e-0d67-4d4a-aedc-1b751970665b
+                        ThrustForce: 10.0
+                        RotationSpeed: 2.0
         -   Entity:
                 Id: 26ad2a6c-0338-4dc1-a26c-a8e318abe494
                 Name: Directional light
@@ -38,27 +78,13 @@ Hierarchy:
                                 BiasParameters: {}
                         Intensity: 20.0
         -   Entity:
-                Id: 3c639cfa-eedc-41f8-b299-04a98d14e26b
-                Name: Sphere
-                Components:
-                    f8048e69bc9c859d9c53a1540ba80e93: !TransformComponent
-                        Id: 845ade74-5b75-4223-b127-e28939989418
-                        Position: {X: 0.0, Y: 0.5, Z: 0.0}
-                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children: {}
-                    78daa26cd3947c77527a5e4d035f9fbf: !ModelComponent
-                        Id: d13df02d-8d2f-405c-a5b3-4a7810aa331e
-                        Model: 650e218f-8473-408e-8c93-1e0d23e088d7:Sphere
-                        Materials: {}
-        -   Entity:
                 Id: 3d6b330e-5c54-4244-997e-0b2e7a8eae40
                 Name: Camera
                 Components:
                     c7ce961c8b3457d615becc04b1e53719: !TransformComponent
                         Id: 07671ffb-5d76-4051-a860-33ddde3ecc05
-                        Position: {X: 2.6, Y: 0.6, Z: -1.0}
-                        Rotation: {X: 0.0, Y: 0.82903755, Z: 0.0, W: 0.5591929}
+                        Position: {X: 0.0, Y: 4.491765, Z: 17.364563}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
                     9fdb9cef5dd9ec5d1aa2e48da87f5e18: !CameraComponent
@@ -66,15 +92,6 @@ Hierarchy:
                         Name: null
                         Projection: Perspective
                         Slot: 01e2a33c-8f00-4826-93da-cd9bbc69f68d
-                    5414e65688a1c8bcbd22bd0b506ebe65: !Tacit_Experimentation.BasicCameraController,Tacit_Experimentation
-                        Id: 22b1a64b-9a92-4029-a4a1-61e403d9930d
-                        Gamepad: false
-                        KeyboardMovementSpeed: {X: 5.0, Y: 5.0, Z: 5.0}
-                        TouchMovementSpeed: {X: 0.7, Y: 0.7, Z: 0.3}
-                        SpeedFactor: 5.0
-                        KeyboardRotationSpeed: {X: 3.0, Y: 3.0}
-                        MouseRotationSpeed: {X: 1.0, Y: 1.0}
-                        TouchRotationSpeed: {X: 1.0, Y: 0.7}
         -   Entity:
                 Id: 54672b9d-eced-4c37-8af5-ca9fe5e54687
                 Name: Ground
@@ -89,6 +106,20 @@ Hierarchy:
                         Id: f146af4c-3d9b-4397-9f7a-f9559dc33859
                         Model: 57a42175-6d52-45f9-9825-21d300a5b267:Ground
                         Materials: {}
+                    b9b990142d089333e8fd383a3f43441c: !StaticColliderComponent
+                        Id: d656a302-f518-45fa-bbd6-adad6efecb0c
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        IsTrigger: false
+                        AlwaysUpdateNaviMeshCache: false
+                        ColliderShapes:
+                            2d377151efb7ee088fede3cbbacd3159: !StaticPlaneColliderShapeDesc
+                                Normal: {X: 0.0, Y: 1.0, Z: 0.0}
+                                Offset: 0.0
         -   Entity:
                 Id: f17902ee-8e8a-4253-b425-ec4c7b2ffa09
                 Name: Skybox

@@ -8,8 +8,8 @@
 		{"id":"782a47deed7203f5","type":"file","file":"Pasted image 20241111175645.png","x":-2660,"y":903,"width":399,"height":286},
 		{"id":"fcf08c0928dd46dc","type":"file","file":"Obligatory Folder/Drone control script.md","x":560,"y":-720,"width":400,"height":350},
 		{"id":"d9aa4fb99df98f26","type":"file","file":"Obligatory Folder/Camera controller script.md","x":560,"y":-300,"width":400,"height":400},
-		{"id":"190ae35996804cd9","x":1160,"y":-720,"width":400,"height":400,"type":"file","file":"Obligatory Folder/Enemy Ai controller.md"},
-		{"id":"8bebcc223170a464","x":1160,"y":-160,"width":400,"height":400,"type":"file","file":"Obligatory Folder/Enemy Ai animator.md"}
+		{"id":"190ae35996804cd9","type":"file","file":"Obligatory Folder/Enemy Ai controller.md","x":1160,"y":-720,"width":400,"height":400},
+		{"id":"8bebcc223170a464","type":"file","file":"Obligatory Folder/Enemy Ai animator.md","x":1160,"y":-160,"width":400,"height":400}
 	],
 	"edges":[
 		{"id":"0dc418cc3a129c7c","fromNode":"7f54774579b52a98","fromSide":"bottom","toNode":"7acd78b0466884ef","toSide":"top","label":"Controls should be simple"},
