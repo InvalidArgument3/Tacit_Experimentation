@@ -1,0 +1,8 @@
+- Animates Enemy agents via states
+	- "Walking"
+	- "Attacking"
+	- "Running"
+	- "Dying"
+	- "Spawning"
+	- "Standing/Idle"
+- 

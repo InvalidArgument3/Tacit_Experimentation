@@ -1,0 +1,6 @@
+- Should spawn in enemies
+- Should task them to commit actions
+	- "Agent A flee from grenade"
+	- "Agent B attack player"
+	- "Agent C move toward player" 
+- 

@@ -15,9 +15,9 @@
               "state": {
                 "file": "Obligatory Folder/Workspace.canvas",
                 "viewState": {
-                  "x": 1031.015384453904,
-                  "y": -289.7554071441257,
-                  "zoom": 0.22222223917643225
+                  "x": 1418.646974090158,
+                  "y": -226.20926494448693,
+                  "zoom": -0.14601329360478088
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -167,8 +167,10 @@
   },
   "active": "2eff7ee7cc95f6b2",
   "lastOpenFiles": [
-    "Obligatory Folder/Camera controller script.md",
+    "Obligatory Folder/Enemy Ai animator.md",
     "Obligatory Folder/Workspace.canvas",
+    "Obligatory Folder/Enemy Ai controller.md",
+    "Obligatory Folder/Camera controller script.md",
     "Obligatory Folder/Drone control script.md",
     "Pasted image 20241111180044.png",
     "Pasted image 20241111175645.png",

@@ -3,3 +3,4 @@
 - should not track right and left, should depict the entire lateral playspace within a 16:9 screen footprint 
 - vertical playspace should extend no further than 4x above where the enemies can be seen at the bottom of the screen
 - should zoom out/in with the scroll wheel
+	- zooming should move the camera back and forth on the X axis, maximum 10 minimum 5
